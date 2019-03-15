@@ -1,12 +1,14 @@
 <h2>Artist Search : </h2>
-<div *ngFor="let artist of artists">
-  <div class="blockArtist">
-    <span class="card-title"><h2>{{ artist.name }}</h2></span>
-    <img [src]="imageUrl(artist.images)" alt="image" class="images">
-    <div class="content">
-      <p>Followers : {{ artist.followers.total }}</p>
-      <p>Genre(s) : {{ artist.genres }}</p>
-      <p>Popularité : {{ artist.popularity }}</p>
+<div class="row">
+    <div class="col-md-6 col-lg-3" *ngFor="let artist of artists">
+      <div class="card mb-3">
+        <img [src]="imageUrl(artist.images)" alt="image" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">{{ artist.name }}</h5>
+          <p class="card-text">Followers : {{ artist.followers.total }}</p>
+          <p class="card-text">Genre(s) : {{ artist.genres }}</p>
+          <p class="card-text">Popularité : {{ artist.popularity }}</p>
+        </div>
+      </div>
     </div>
-  </div>
 </div>

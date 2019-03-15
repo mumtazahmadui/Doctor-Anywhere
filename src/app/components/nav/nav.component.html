@@ -1,21 +1,21 @@
-<nav>
-  <ul>
-    <li *ngIf="userProfile == null">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+  <div class="container">
+    <span *ngIf="userProfile == null" class="navbar-brand order-1 mr-0">
       <a href="https://accounts.spotify.com/authorize?client_id={{clientId}}response_type=token&redirect_uri=http://localhost:4200/callback/">Sign in</a>
-    </li>
+    </span>
     <ng-container *ngIf="userProfile != null">
-      <li>
-        <img src="{{userProfile.images[0]?.url}}">
-      </li>
-      <li>
-        {{userProfile.display_name}}
-      </li>
+        <span class="navbar-brand order-1 mr-0">{{userProfile.display_name}}</span>
     </ng-container>
-    <li>
-      <a routerLink="/">Home</a>
-    </li>
-    <li *ngIf="userProfile != null">
-      <a (click)="signOut()" href="#">Sign out</a>
-    </li>
-  </ul>
-</nav>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" routerLink="/">Home </a>
+        <span *ngIf="userProfile != null">
+        <a class="nav-item nav-link ml-2" (click)="signOut()" href="#">Sign out</a>
+      </span>
+      </div>
+    </div>
+  </div>
+</nav><!-- /navbar -->

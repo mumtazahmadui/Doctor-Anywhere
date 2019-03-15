@@ -1,13 +1,28 @@
 <h2>Album Search : </h2>
-<div *ngFor="let album of albums">
+<!-- <div *ngFor="let album of albums">
   <div class="blockArtist">
     <span class="card-title"><h2>{{ album.name }}</h2></span>
     <img [src]="imageUrl(album.images)" alt="image" class="images">
     <div class="content">
-      <p>Nom Artiste : {{ album.artists[0].name }}</p>
-      <p>Type d'album : {{ album.album_type }}</p>
-      <p>Date de sortie : {{ album.release_date }}</p>
-      <p>Nombre de pistes : {{ album.total_tracks }}</p>
+      <p class="card-text">Nom Artiste : {{ album.artists[0].name }}</p>
+      <p class="card-text">Type d'album : {{ album.album_type }}</p>
+      <p class="card-text">Date de sortie : {{ album.release_date }}</p>
+      <p class="card-text">Nombre de pistes : {{ album.total_tracks }}</p>
     </div>
   </div>
+</div> -->
+
+<div class="row">
+    <div class="col-md-6 col-lg-3" *ngFor="let album of albums">
+      <div class="card mb-3">
+        <img [src]="imageUrl(album.images)" alt="image" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">{{ album.name }}</h5>
+          <p class="card-text">Nom Artiste : {{ album.artists[0].name }}</p>
+          <p class="card-text">Type d'album : {{ album.album_type }}</p>
+          <p class="card-text">Date de sortie : {{ album.release_date }}</p>
+          <p class="card-text">Nombre de pistes : {{ album.total_tracks }}</p>
+        </div>
+      </div>
+    </div>
 </div>
