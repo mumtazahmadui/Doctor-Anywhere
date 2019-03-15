@@ -1,0 +1,55 @@
+.container {
+    width: 100%;
+    max-width: 960px;
+    margin: auto;
+}
+
+.search-container {
+    width: 75%;
+    max-width: 960px;
+    margin: auto;
+}
+
+.search-container form {
+    padding: 1em;
+    margin: 1em;
+}
+
+.search-container form input {
+    padding: 1em;
+    width: 100%;
+    font-size: 1.2em;
+}
+.images{
+    max-width: 150px;
+    max-height: 150px;
+    float: right;
+}
+
+.card-title{
+    display: flex;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+}
+.blockArtist{
+    background-color: rgba(138, 138, 138, 0.8);
+    color: white;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 5px 15px;
+}
+
+#formSearch{
+    display: flex;
+    flex-direction: row;
+}
+#buttonSearch{
+    width: 120px;
+}
+#selectType{
+    min-width: 50px;
+    width: 70px;
+}

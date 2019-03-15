@@ -1,0 +1,12 @@
+<h2>Track search : </h2>
+<div *ngFor="let track of tracks">
+  <div class="blockArtist">
+    <span class="card-title"><h2>{{ track.name }}</h2></span>
+    <img [src]="imageUrl(track.album.images)" alt="image" class="images">
+    <div class="content">
+      <p>Nom album : {{ track.album.name }}</p>
+      <p>Artiste : {{ track.artists[0].name }}</p>
+      <p>Numéro de la piste : {{ track.track_number }}</p>
+    </div>
+  </div>
+</div>

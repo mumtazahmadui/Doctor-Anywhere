@@ -1,0 +1,13 @@
+<h2>Album Search : </h2>
+<div *ngFor="let album of albums">
+  <div class="blockArtist">
+    <span class="card-title"><h2>{{ album.name }}</h2></span>
+    <img [src]="imageUrl(album.images)" alt="image" class="images">
+    <div class="content">
+      <p>Nom Artiste : {{ album.artists[0].name }}</p>
+      <p>Type d'album : {{ album.album_type }}</p>
+      <p>Date de sortie : {{ album.release_date }}</p>
+      <p>Nombre de pistes : {{ album.total_tracks }}</p>
+    </div>
+  </div>
+</div>

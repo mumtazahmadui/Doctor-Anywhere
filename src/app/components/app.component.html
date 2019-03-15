@@ -1,0 +1,25 @@
+<app-nav></app-nav>
+<div class="container">
+  <div class="search-container">
+    <h2>
+      Search
+    </h2>
+    <!-- Ne pas oublier d'ajouter l'import du FormsModule dans app.module.ts -->
+    <form (ngSubmit)="onSubmit(search.value, type.value)" id="formSearch">
+      <input type="search" name="searchValue" #search>
+      <select name="type" #type id="selectType">
+        <option *ngFor="let item of typeSearch" [value]="item">{{item}}</option>
+      </select>
+      <input type="submit" id="buttonSearch" value="SEARCH">
+    </form>
+
+    <app-home></app-home>
+   
+    <app-artist *ngIf="getType() === 'artist'" [artists]="getValue()"></app-artist>
+    <app-track *ngIf="getType() === 'track'" [tracks]="getValue()"></app-track>
+    <app-album *ngIf="getType() === 'album'" [albums]="getValue()"></app-album>
+
+
+  </div>
+</div>
+<router-outlet></router-outlet>

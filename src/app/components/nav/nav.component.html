@@ -1,0 +1,21 @@
+<nav>
+  <ul>
+    <li *ngIf="userProfile == null">
+      <a href="https://accounts.spotify.com/authorize?client_id={{clientId}}response_type=token&redirect_uri=http://localhost:4200/callback/">Sign in</a>
+    </li>
+    <ng-container *ngIf="userProfile != null">
+      <li>
+        <img src="{{userProfile.images[0]?.url}}">
+      </li>
+      <li>
+        {{userProfile.display_name}}
+      </li>
+    </ng-container>
+    <li>
+      <a routerLink="/">Home</a>
+    </li>
+    <li *ngIf="userProfile != null">
+      <a (click)="signOut()" href="#">Sign out</a>
+    </li>
+  </ul>
+</nav>
